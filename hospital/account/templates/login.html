@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="wrapper">
+    <div class="title text-center mt-5 ">
+        <h1>Login</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <form action="" method="post">
+                {% csrf_token %}
+                <table class="table bg-info">
+                    {{form.as_table}}
+                </table>
+                <div class="field text-center mb-5">
+                    <button class = "btn btn-primary" type="submit">Login</button>
+                </div>
+            </form>
+            
+        </div>
+        <div class="col-4"></div>
+    </div>
+
+{% endblock body %}

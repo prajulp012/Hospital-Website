@@ -1,0 +1,35 @@
+{% extends 'base2.html' %}
+
+{% block body %}
+
+<div class="wrapper">
+  <form class="signup-form mt-5">
+    <h2 class="text-center">Booking History</h2>
+  <table class="table mt-5">
+    <tr>
+      <th>No</th>
+      <th>Patient Name</th>
+      <th>Patient Phone</th>
+      <th>Patient Email</th>
+      <th>Doctor</th>
+      <th>Date</th>
+      <th></th>
+      
+    </tr>
+    {% for i in details %}
+    <tr>
+      <td>{{forloop.counter}}</td>
+      <td>{{i.patient_name}}</td>
+      <td>{{i.patient_phone}}</td>
+      <td>{{i.patient_email}}</td>
+      <td>{{i.doctor_name}}</td>
+      <td>{{i.booking_date}}</td>
+      <td>
+        <a class="btn btn-danger" href="{% url 'patientdelete' i.id %}">Delete</a><br>
+    </td>
+    </tr>
+    {% endfor %}
+</form>
+</div>
+
+{% endblock body %}

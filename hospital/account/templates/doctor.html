@@ -1,0 +1,24 @@
+{% extends 'rempage.html' %}
+
+{% block title %} Doctors {% endblock title %}
+
+{% block body %}
+
+<div class = "container text-center bg-light">
+
+    {% for i in doctor %}
+    
+    <div class="card text-center bg-secondary p-3 my-5 mx-3" style="width: 18rem; display: inline-block;">
+      <img src="{{i.doctor_image.url}}" height="200px" width="200px" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Dr. {{i.doctor_name}}</h5>
+        <h6 class="mb-3">{{i.department_name}}</h6>
+        <h6 class="mb-3">Department</h6>   
+      </div>
+    </div>
+
+      {% endfor %}
+
+</div>
+
+{% endblock body%}

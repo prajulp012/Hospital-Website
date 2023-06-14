@@ -1,0 +1,14 @@
+{% extends 'rempage.html' %}
+
+{% block title %} Departments {% endblock title %}
+
+{% block body %}
+
+{% for i in department %}
+<div class="mx-auto w-50 bg-secondary text-center text-white p-3 my-5 border-warning rounded">
+    <h1>{{i.department_name}}</h1>
+    <p>{{i.department_description}}</p>
+</div>
+{% endfor %}
+
+{% endblock body%}
